@@ -220,7 +220,6 @@ function Result(props: any) {
 
     useEffect(() => {
         const img = new Image();
-        console.log(props);
         
         if (props.proporcao === "1") {
             if (list.length === 1) {
