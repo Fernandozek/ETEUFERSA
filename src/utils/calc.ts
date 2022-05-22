@@ -1,5 +1,5 @@
 export default {
-    dimensionamento(populacao:number, vazao_afluente:number, dbo_afluente:number, temperatura:number,  taxa_volumetrica:number, taxa_acumulo:number, lagoasAdotadas: number, proporcao:number, k:number, h_anaerobia:number, h_facultativa:number){        
+    dimensionamento(populacao:number, vazao_afluente:number, dbo_afluente:number, temperatura:number,  taxa_volumetrica:number, taxa_acumulo:number, lagoasAdotadas: number, proporcao:number, k:number, h_anaerobia:number, h_facultativa:number, dqo:number){        
         // lagoa anaeróbia
         
         // Carga afluente de DBO
@@ -26,7 +26,7 @@ export default {
         let expessura = ((acumulacao_anual*1000) * 1) / area; // 1 adotado
         
         // Tempo para se atingir 1/3 da altura útil das lagoas
-        let tempo1terco = ((h_anaerobia/3)/ expessura)*10;
+        let tempo1terco = ((h_anaerobia/3)/ expessura);
 
         //=========================================================================
         
@@ -109,9 +109,14 @@ export default {
         expessura = Number((expessura*100).toFixed(0))
         eficiencia = Number(eficiencia.toFixed(2));
         volume = Number(String(volume).slice(0,4));
-        console.log(tempo1terco);
+        let dqo_dbo = -1
         
-        let vet1 = [cargaAnaerobia, volume, tempo, area, acumulacao_anual, expessura, tempo1terco, L_anaerobia, B_anaerobia];
+        if(dqo > 0){
+           dqo_dbo = Number((dqo / dbo_afluente).toFixed(2));
+        }
+        
+
+        let vet1 = [cargaAnaerobia, volume, tempo, area, acumulacao_anual, expessura, tempo1terco, L_anaerobia, B_anaerobia, dqo_dbo];
         let vet2 = [CargaFacultativa, areaTotal_Facultativa, areaLagoaFacultativaIndividual, volumeResultante_Facultativa, tempoDetencao_facultativa, kt, s, DBO5_Particulada, DBOTotalAfluente_facultativa, eficiencia, areaTotal_AnaerobiaFacultativa, areaTotal, areaPercapita_facultativa, L_Facultativa, B_Facultativa];
 
         return [vet1, vet2];

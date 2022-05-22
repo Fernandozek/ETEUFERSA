@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import FooterContent from '../Content';
 
 const FooterContainer = styled.footer`
-    background-color: var(--fundo);
-
+    background-color: var(--rodape);
     @media(min-width: 768px){
-        
+        display: flex;
+        justify-content: center;
     }
 `
 

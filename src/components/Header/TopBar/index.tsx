@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const TopBarContainer = styled.div`
+    width: 100%;
     height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    line-height: 30px;
+    text-align: center;
     color: white;
     background-color: var(--primaria-dark);
 `
