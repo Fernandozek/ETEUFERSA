@@ -93,8 +93,10 @@ export default function FooterContent() {
         <FooterData>
           <Title>Desenvolvedores</Title>
           <Lista>
+            <li>Bruno Wellington da Silva Lima</li>
             <li>Fernando Dutra Ribeiro</li>
             <li>Alisson Gadelha de Medeiros</li>
+            <li>Maria Josicleide Felipe Guedes</li>
           </Lista>
         </FooterData>
         <FooterData>
@@ -116,7 +118,7 @@ export default function FooterContent() {
               <Icon>
                 <FiMail />
               </Icon>
-              <Email style={{ paddingBottom: "4px" }}>em breve!</Email>
+              <Email style={{ paddingBottom: "4px" }}>faceu.ufersa@gmail.com</Email>
             </li>
           </Lista>
         </FooterData>

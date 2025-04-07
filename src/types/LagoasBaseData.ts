@@ -9,6 +9,17 @@ export type LagoasBaseData = {
   proporcao: number;
   k: number;
   dqo: number;
-  hAnaerobia: number;
+  hAnaerobia?: number;
   hFacultativa: number;
+
+   //aqui vai os dados que ta sendo atribuidos
+  coliformesFecais?: number;
+  ovosHelmintos?: number;
+  quantidadeLagoasMaturacao?: number;
+  profundidadeUtilH?: number;
+  comprimentoMaturacao?: number;
+  larguraMaturacao?: number;
+  valorTempoDetencao?: number;
+  eficienciaRemocaoDBO?: number;
+  eficienciaRemocaoOvosHelmitoss?: number;
 };

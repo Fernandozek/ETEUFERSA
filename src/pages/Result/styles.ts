@@ -1,25 +1,51 @@
 import styled from "styled-components";
 
-export const Page = styled.div`
+export const Resultado = styled.div`
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  padding: 0 9.8%;
+  display: grid;
+  grid-template-columns: 4fr 1.5fr 4fr;
   align-items: center;
-  justify-content: center;
-`;
-export const Value = styled.p`
-  width: 360px;
-  text-align: right;
-`;
+  text-align: center;
+  transition: 1s;
+  transition-property: all;
+  margin-bottom: 20px;
+  h2 {
+    padding-top: 5px;
+    color: var(--primaria-dark);
+  }
+`
+
+export const Linha = styled.hr`
+  width: 100%;
+  border: 1px solid var(--primaria-dark);
+`
+
 export const Card = styled.div`
-  width: 600px;
+  width: 70%;
   height: 100%;
+  margin: 30px 0;
   background: #fff;
   padding: 10px 20px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+export const Page = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  ${Card}:nth-child(3) {
+    width: 550px;
+  }
+`;
+export const Value = styled.p`
+  text-align: right;
 `;
 
 export const Container = styled.div`
@@ -32,6 +58,7 @@ export const Container = styled.div`
 
   ${Card} {
     width: 400px;
+    margin: 0;
     ${Value} {
       width: 43%;
     }
@@ -61,12 +88,13 @@ export const Item = styled.div`
 
 export const Canvas = styled.div`
   width: 1100px;
-  height: 440px;
+  height: 438px;
   background-color: #909090;
 `;
 
 export const Description = styled.p`
   font-weight: 500;
+  max-width: 70%;
   cursor: help;
   position: relative;
   display: inline-block;
